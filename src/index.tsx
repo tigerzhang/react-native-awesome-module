@@ -6,7 +6,8 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo managed workflow\n';
 
-const AwesomeModule = NativeModules.AwesomeModule  ? NativeModules.AwesomeModule  : new Proxy(
+const AwesomeModule = NativeModules.AwesomeModule ? NativeModules.AwesomeModule
+  : new Proxy(
       {},
       {
         get() {
@@ -17,4 +18,10 @@ const AwesomeModule = NativeModules.AwesomeModule  ? NativeModules.AwesomeModule
 
 export function multiply(a: number, b: number): Promise<number> {
   return AwesomeModule.multiply(a, b);
+}
+export function getSkrtBleKey(key: string, len: number): Promise<string> {
+  return AwesomeModule.getSkrtBleKey(key, len);
+}
+export function getSkrtBleKeyArray(key: Array, len: number): Promise<Array> {
+  return AwesomeModule.getSkrtBleKeyArray(key, len);
 }
