@@ -22,6 +22,6 @@ export function multiply(a: number, b: number): Promise<number> {
 export function getSkrtBleKey(key: string, len: number): Promise<string> {
   return AwesomeModule.getSkrtBleKey(key, len);
 }
-export function getSkrtBleKeyArray(key: Array, len: number): Promise<Array> {
+export function getSkrtBleKeyArray(key: Array<number>, len: number): Promise<Array<number>> {
   return AwesomeModule.getSkrtBleKeyArray(key, len);
 }
